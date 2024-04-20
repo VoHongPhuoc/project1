@@ -1,0 +1,198 @@
+/* Mobile & Tablet */
+@media (max-width: 1023px ){
+    :root{
+        --header-height: 68px;
+        --navbar-height: 0px;
+        --header-sort-bar-height: 46px;
+    }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header__cart-link{
+        
+    }
+    .header__cart-link{
+        position: fixed;
+        /* background-color: black; */
+        top: var(--header-height);
+        right: 8px;
+        width: 98%;
+        z-index: 11;
+        /* display: block; */
+        /* hàm tính lấy tổng phần sp 644px */
+        padding: 0 calc((100% - 644px)/2);
+    }
+    .header__cart-link::after{
+        content: "";
+        position: absolute;
+        /* background-color: black; */
+        width: 100px;
+        height: 30px;
+        top: -12px;
+        right: 35px;
+    }
+    
+    .header__cart-link::before{
+        display: none;
+        z-index: 11;
+    }
+    .header__cart-list{
+        width: 100%;
+        max-height: 30vh;
+    }
+    .header__cart-heading{
+        z-index: 11;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 2px;
+        z-index: 10;
+    }
+    .app__container{
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .app__content{
+        padding-top: 11px;
+    }
+    .mobile-category{
+        display: flex;
+    }
+}
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart{
+        width: 80px;
+        text-align: right;
+    }
+}
+/* Mobile */
+@media (max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .header-with-search{
+        justify-content: space-between;
+    }
+    .header__cart{
+        width: unset;
+    }
+    .header__logo-link{
+        display: block;
+        line-height: 0;
+        width: 100%;
+    }
+    .header__logo-img{
+        margin-left: 18px;
+        max-width: 90%;
+    }
+    .header__mobile-search{
+        display: block;
+    }
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        z-index: 1;
+        padding: 0 16px;
+        animation: mobileSearchSideIn linear 0.3s;
+        display: none;
+    }
+    @keyframes mobileSearchSideIn {
+        from{
+            opacity: 0;
+            top: calc(var(--header-height)/2);
+        }to{
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+    /* thanh tìm kiếm */
+    .header__search-input{
+        width: unset;
+        padding: 0 6px;
+        font-size: 1.2rem;
+    }
+    .header__search-select{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 8px 8px;
+        width: 140px;
+        border: none;
+    }
+    .header__search-select::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        border-left: 1px solid #d3d3d3;
+        height: 20px;
+        transform: translateY(-50%);
+    }
+    .header__search-select-hover{
+        width: unset;
+        top: 83%;
+    }
+    .header__search-select-link{
+        margin-left: 12px;
+    }
+    .header__search-select-link-icon{
+        margin-left: 10px;
+    }
+    .header__search-select-labal{
+        font-size: 1.2rem;
+        width: 60%;
+    }
+    .header__search-history{
+        position: fixed;
+        width: 100%;
+        top: calc(var(--header-height) + var(--header-sort-bar-height));
+        left: 0;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    .header__mobile-search-menu-label{
+        display: block;
+    }
+    .header-menu-search{
+        animation: mobileMenuSideIn  ease-in .3s;
+    }
+    @keyframes mobileMenuSideIn {
+        from{
+            opacity: 0;
+            transform: translateX(-100%);
+           
+        }to{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .pagination-item{
+        margin: 1px;
+    }
+    .home-product__pagination{
+        padding: 0;
+    }
+    
+
+    .pagination-item__link {
+        min-width: 28px;
+    }
+    
+
+    .home-product__pagination{
+        margin: 39px 0 32px 0;
+    }
+}
